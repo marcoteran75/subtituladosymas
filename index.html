@@ -3,32 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Metaetiquetas SEO -->
   <title>Videos Subtitulados en Español | Explora Categorías</title>
   <meta name="description" content="Disfruta de videos subtitulados en español: acción, anime, romance, superhéroes y más. Contenido único y de calidad para todos." />
   <meta name="keywords" content="videos subtitulados, videos en español, anime subtitulado, acción, romance, superhéroes, entretenimiento" />
-  <meta name="author" content="Videos Subtitulados" />
-  <meta name="robots" content="index, follow" />
-  <!-- Open Graph para redes sociales (viralidad) -->
+
+  <!-- Open Graph / Twitter -->
   <meta property="og:title" content="Videos Subtitulados en Español - Acción, Anime, Romance y Más" />
   <meta property="og:description" content="Explora nuestra colección de videos subtitulados en español. Perfecto para fans de anime, acción, superhéroes y romance. ¡Comparte ahora!" />
-  <meta property="og:image" content="https://tuusuario.github.io/turepo/images/og-image.jpg" /> <!-- Sube una imagen atractiva al repo -->
+  <meta property="og:image" content="https://tuusuario.github.io/turepo/images/og-image.jpg" />
   <meta property="og:url" content="https://tuusuario.github.io/turepo" />
   <meta property="og:type" content="website" />
-  <!-- Twitter Card para compartir en X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Videos Subtitulados en Español" />
-  <meta name="twitter:description" content="Videos subtitulados en español: anime, acción, romance y más. ¡Descubre y comparte!" />
-  <meta name="twitter:image" content="https://tuusuario.github.io/turepo/images/og-image.jpg" />
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/favicon.png" /> <!-- Sube un favicon al repo -->
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/estilo.css" />
-  <!-- Preconexión a recursos para velocidad -->
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- ==== CSS RESPONSIVE CORREGIDO ==== -->
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #111;
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      background: #000;
+      padding: 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: #00ccff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hero-bg.jpg');
+      background-size: cover;
+    }
+    .hero h2 { font-size: 2.2rem; margin-bottom: 1rem; }
+    .cta-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 12px 30px;
+      background: #e91e63;
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+    }
+    .cta-button:hover { background: #c2185b; }
+
+    /* ==== CATEGORÍAS - GRID RESPONSIVE ==== */
+    #categorias {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 2rem auto;
+    }
+    .cat-card {
+      display: block;
+      background: #222;
+      color: white;
+      padding: 1.8rem 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border-radius: 12px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    .cat-card:hover {
+      background: #e91e63;
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(233,30,99,0.4);
+    }
+
+    /* Botones compartir */
+    .share-buttons {
+      margin-top: 3rem;
+    }
+    .share-btn {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 20px;
+      background: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    .twitter { background: #1da1f2; }
+    .facebook { background: #3b5998; }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    footer a { color: #00ccff; }
+
+    /* Responsive fino para móviles */
+    @media (max-width: 480px) {
+      header h1 { font-size: 1.5rem; }
+      nav a { display: block; margin: 8px 0; font-size: 1.1rem; }
+      .hero h2 { font-size: 1.8rem; }
+      .cat-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
+      .cat-card { padding: 1.5rem 0.5rem; font-size: 1rem; }
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <h1>Videos Subtitulados en Español</h1>
     <nav aria-label="Navegación principal">
@@ -37,7 +141,7 @@
       <a href="maduras.html">Maduras</a>
       <a href="interracial.html">Interracial</a>
       <a href="accion.html">Acción</a>
-      <a href="ANIME.HTML">Anime</a> <!-- Corregido a minúsculas -->
+      <a href="anime.html">Anime</a>
       <a href="romance.html">Romance</a>
     </nav>
   </header>
@@ -46,7 +150,6 @@
     <section class="hero">
       <h2>Explora Videos Subtitulados por Categoría</h2>
       <p>Encuentra los mejores videos subtitulados en español: acción, anime, romance, superhéroes y más.</p>
-      <!-- Botón CTA para enganchar -->
       <a href="#categorias" class="cta-button">¡Descubre Ahora!</a>
     </section>
 
@@ -56,11 +159,11 @@
         <a href="xxx.html" class="cat-card" aria-label="Videos XXX subtitulados">XXX Sub</a>
         <a href="accion.html" class="cat-card" aria-label="Videos de acción subtitulados">Acción</a>
         <a href="superheroes.html" class="cat-card" aria-label="Videos de superhéroes subtitulados">Superhéroes</a>
-        <a href="ANIME.HTML" class="cat-card" aria-label="Anime subtitulado en español">Anime</a>
+        <a href="anime.html" class="cat-card" aria-label="Anime subtitulado en español">Anime</a>
         <a href="romance.html" class="cat-card" aria-label="Videos de romance subtitulados">Romance</a>
         <a href="knightrider.html" class="cat-card" aria-label="Videos de Knight Rider subtitulados">Knight Rider</a>
       </div>
-      <!-- Botones de compartir -->
+
       <div class="share-buttons">
         <p>¡Comparte con tus amigos!</p>
         <a href="https://twitter.com/intent/tweet?url=https://tuusuario.github.io/turepo&text=¡Videos subtitulados en español! Anime, acción, romance y más." target="_blank" rel="noopener" class="share-btn twitter">Compartir en X</a>
@@ -71,26 +174,9 @@
 
   <footer>
     <p>Contáctame para pedidos o compras:</p>
-    <p>Email: <a href="mailto:ortaglz@hotmail.com" style="color:white;">ortaglz@hotmail.com</a></p>
+    <p>Email: <a href="mailto:ortaglz@hotmail.com">ortaglz@hotmail.com</a></p>
     <p>&copy; 2025 Videos Subtitulados. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'GA_TRACKING_ID'); // Reemplaza con tu ID de Google Analytics
-  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
