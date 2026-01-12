@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PELICULA PARA DESCARGA - Videos Subtitulados</title>
+  <link rel="stylesheet" href="../css/estilo.css" />
+  <style>
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;              /* espacio entre las imágenes */
+      padding: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .movie-poster {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    }
+
+    .movie-poster:hover {
+      transform: scale(1.08);
+      z-index: 2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Para pantallas muy pequeñas (móviles) */
+    @media (max-width: 600px) {
+      .video-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PELICULAS PARA DESCARGA</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="teens.html">Teens</a>
+      <a href="maduras.html">Maduras</a>
+      <a href="interracial.html">Interracial</a>
+      <a href="accion.html">Acción</a>
+      <a href="anime.html">Anime</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>PELICULAS PARA DESCARGA</h2>
+    
+    <div class="video-grid">
+
+      <a href=" https://exe.io/SESIONDEFOTOS  " target="_blank">
+        <img src="https://i.postimg.cc/fRZX7hC2/vlcsnap-2026-01-12-10h27m17s374.png" 
+             alt="SESION DE FOTOS" 
+             class="movie-poster">
+      </a>
+
+      <!-- Aquí puedes agregar más películas fácilmente -->
+      <!-- 
+      <a href="ENLACE" target="_blank">
+        <img src="URL_IMAGEN" alt="TÍTULO" class="movie-poster">
+      </a>
+      -->
+
+    </div>
+  </main>
+</body>
+</html>
