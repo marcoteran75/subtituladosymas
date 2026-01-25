@@ -46,8 +46,8 @@
     }
 
     .gallery img {
-      width: 300px;              /* Tamaño grande para que se vea bien la miniatura */
-      height: 169px;             /* Proporción 16:9 */
+      width: 300px;
+      height: 169px;
       object-fit: cover;
       border-radius: 12px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.7);
@@ -64,20 +64,20 @@
     /* Tooltip con progreso al pasar el cursor */
     .tooltip {
       visibility: hidden;
-      width: 240px;
+      width: 260px;
       background: rgba(0,0,0,0.92);
       color: white;
       text-align: center;
       border-radius: 10px;
-      padding: 12px 15px;
+      padding: 14px 16px;
       position: absolute;
       z-index: 15;
-      bottom: 115%; 
+      bottom: 115%;
       left: 50%;
       transform: translateX(-50%);
       opacity: 0;
       transition: opacity 0.3s ease;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: bold;
       border: 2px solid #ff3366;
       pointer-events: none;
@@ -103,99 +103,86 @@
   <h1>¡Desbloquea esta película porno!</h1>
   <p class="subtitle">Donación mínima: $1 USD — Meta: $30 USD</p>
 
-  <!-- GALERÍA DE MINIATURAS (todo visible sin salir de la página) -->
+  <!-- GALERÍA DE MINIATURAS -->
   <div class="gallery-container">
     <div class="gallery">
 
       <!-- Película 1 -->
-      <div class="gallery-item" onclick="abrirDonacion()">
-        <img src=" https://i.postimg.cc/fRZX7hC2/vlcsnap_2026_01_12_10h27m17s374.png    " alt="captura 1">
-        <div class="tooltip">Peli 1: 18 / 30 USD (60% recaudado)</div>
+      <div class="gallery-item" onclick="abrirDonacion('donar1.html')">
+        <img src="https://i.postimg.cc/fRZX7hC2/vlcsnap_2026_01_12_10h27m17s374.png" alt="captura 1">
+        <div class="tooltip">Película 1: 24 / 30 USD (80% recaudado)</div>
       </div>
 
       <!-- Película 2 -->
-      <div class="gallery-item" onclick="abrirDonacion()">
-        <img src=" https://i.postimg.cc/cH251Ccp/vlcsnap_2026_01_13_11h31m44s209.png  " alt="Captura 2">
-        <div class="tooltip">Peli 2: 7 / 30 USD (23% recaudado)</div>
+      <div class="gallery-item" onclick="abrirDonacion('donar-pelicula-2.html')">
+        <img src="https://i.postimg.cc/cH251Ccp/vlcsnap_2026_01_13_11h31m44s209.png" alt="Captura 2">
+        <div class="tooltip">Película 2: 7 / 30 USD (23% recaudado)</div>
       </div>
 
       <!-- Película 3 -->
-      <div class="gallery-item" onclick="abrirDonacion()">
-        <img src=" https://i.postimg.cc/K8Ls1DsV/vlcsnap_2026_01_15_11h43m06s175.png   " alt="Captura 3">
-        <div class="tooltip">Peli 3: 26 / 30 USD (87% recaudado)</div>
+      <div class="gallery-item" onclick="abrirDonacion('donar-pelicula-3.html')">
+        <img src="https://i.postimg.cc/K8Ls1DsV/vlcsnap_2026_01_15_11h43m06s175.png" alt="Captura 3">
+        <div class="tooltip">Película 3: 26 / 30 USD (87% recaudado)</div>
       </div>
 
-   <!-- Película 4 -->
-      <div class="gallery-item" onclick="abrirDonacion()">
-        <img src=" https://i.postimg.cc/ZqSspv11/vlcsnap_2026_01_15_11h44m33s502.png    " alt="captura 4">
-        <div class="tooltip">Peli 1: 18 / 30 USD (60% recaudado)</div>
+      <!-- Película 4 -->
+      <div class="gallery-item" onclick="abrirDonacion('donar-pelicula-4.html')">
+        <img src="https://i.postimg.cc/ZqSspv11/vlcsnap_2026_01_15_11h44m33s502.png" alt="captura 4">
+        <div class="tooltip">Película 4: 18 / 30 USD (60% recaudado)</div>
       </div>
 
-
-   <!-- Película 5 -->
-      <div class="gallery-item" onclick="abrirDonacion()">
-        <img src="https://i.postimg.cc/htx3X13k/vlcsnap_2026_01_15_11h44m58s213.png     " alt="captura 5">
-        <div class="tooltip">Peli 1: 18 / 30 USD (60% recaudado)</div>
+      <!-- Película 5 -->
+      <div class="gallery-item" onclick="abrirDonacion('donar-pelicula-5.html')">
+        <img src="https://i.postimg.cc/htx3X13k/vlcsnap_2026_01_15_11h44m58s213.png" alt="captura 5">
+        <div class="tooltip">Película 5: 12 / 30 USD (40% recaudado)</div>
       </div>
 
-
-   <!-- Película 6 -->
-      <div class="gallery-item" onclick="abrirDonacion()">
-        <img src=" https://i.postimg.cc/YCgyvzs7/vlcsnap_2026_01_15_11h45m44s464.png   " alt="captura 6">
-        <div class="tooltip">Peli 1: 18 / 30 USD (60% recaudado)</div>
+      <!-- Película 6 -->
+      <div class="gallery-item" onclick="abrirDonacion('donar-pelicula-6.html')">
+        <img src="https://i.postimg.cc/YCgyvzs7/vlcsnap_2026_01_15_11h45m44s464.png" alt="captura 6">
+        <div class="tooltip">Película 6: 29 / 30 USD (97% recaudado) ¡Casi lista!</div>
       </div>
 
-
-   <!-- Película 7 -->
-      <div class="gallery-item" onclick="abrirDonacion()">
-        <img src=" https://i.postimg.cc/QM3Y1K2B/vlcsnap_2026_01_15_11h46m10s266.png   " alt="captura 7">
-        <div class="tooltip">Peli 1: 18 / 30 USD (60% recaudado)</div>
+      <!-- Película 7 -->
+      <div class="gallery-item" onclick="abrirDonacion('donar-pelicula-7.html')">
+        <img src="https://i.postimg.cc/QM3Y1K2B/vlcsnap_2026_01_15_11h46m10s266.png" alt="captura 7">
+        <div class="tooltip">Película 7: 15 / 30 USD (50% recaudado)</div>
       </div>
 
-
-   <!-- Película 8 -->
-      <div class="gallery-item" onclick="abrirDonacion()">
-        <img src=" https://i.postimg.cc/Gpx7QhR3/vlcsnap_2026_01_15_11h46m48s275.png   " alt="captura 8">
-        <div class="tooltip">Peli 1: 18 / 30 USD (60% recaudado)</div>
+      <!-- Película 8 -->
+      <div class="gallery-item" onclick="abrirDonacion('donar-pelicula-8.html')">
+        <img src="https://i.postimg.cc/Gpx7QhR3/vlcsnap_2026_01_15_11h46m48s275.png" alt="captura 8">
+        <div class="tooltip">Película 8: 22 / 30 USD (73% recaudado)</div>
       </div>
 
-   <!-- Película 9 -->
-      <div class="gallery-item" onclick="abrirDonacion()">
-        <img src="  https://i.postimg.cc/GpCgGTWs/vlcsnap_2026_01_15_11h47m14s774.png   " alt="captura 9">
-        <div class="tooltip">Peli 1: 18 / 30 USD (60% recaudado)</div>
+      <!-- Película 9 -->
+      <div class="gallery-item" onclick="abrirDonacion('donar-pelicula-9.html')">
+        <img src="https://i.postimg.cc/GpCgGTWs/vlcsnap_2026_01_15_11h47m14s774.png" alt="captura 9">
+        <div class="tooltip">Película 9: 8 / 30 USD (27% recaudado)</div>
       </div>
 
-   <!-- Película 10 -->
-      <div class="gallery-item" onclick="abrirDonacion()">
-        <img src=" https://i.postimg.cc/HxD2mRgD/vlcsnap_2026_01_16_11h28m37s673.png    " alt="captura 10">
-        <div class="tooltip">Peli 1: 18 / 30 USD (60% recaudado)</div>
+      <!-- Película 10 -->
+      <div class="gallery-item" onclick="abrirDonacion('donar-pelicula-10.html')">
+        <img src="https://i.postimg.cc/HxD2mRgD/vlcsnap_2026_01_16_11h28m37s673.png" alt="captura 10">
+        <div class="tooltip">Película 10: 19 / 30 USD (63% recaudado)</div>
       </div>
-
-
-
-
-
-      <!-- Agrega más capturas de la misma película o de otras -->
-      <!-- <div class="gallery-item" onclick="abrirDonacion()">
-        <img src="https://tu-dominio.com/capturas/peli1-04.jpg" alt="Captura 4">
-        <div class="tooltip">Peli 4: 12 / 30 USD (40% recaudado)</div>
-      </div> -->
 
     </div>
   </div>
 
   <div class="info">
-    <p>¡Haz clic en cualquier miniatura para ver las formas de donar!</p>
+    <p>¡Pasa el cursor sobre cada miniatura para ver cuánto falta!</p>
+    <p>¡Haz clic en la que esté más cerca de desbloquearse!</p>
     <p><strong>Tarjeta débito/crédito • PayPal • Cripto • Cash App • Dollar App</strong></p>
   </div>
 
   <script>
-    function abrirDonacion() {
-      // Abre en NUEVA PESTAÑA (recomendado para no perder la página actual)
-      window.open('https://tu-dominio.com/donar.html', '_blank');
-
-      // Si prefieres que abra en la MISMA pestaña, usa esto en su lugar:
-      // window.location.href = 'https://tu-dominio.com/donar.html';
+    function abrirDonacion(pagina) {
+      // Abre en nueva pestaña para no perder la galería
+      window.open(pagina, '_blank');
+      
+      // Si prefieres que abra en la misma pestaña:
+      // window.location.href = pagina;
     }
   </script>
 
