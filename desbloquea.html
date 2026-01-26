@@ -24,44 +24,80 @@
       margin-bottom: 30px;
     }
 
-    .gallery-container {
-      overflow-x: auto;
-      white-space: nowrap;
-      padding: 20px 0;
-      margin: 20px 0;
-      scrollbar-width: thin;
-      scrollbar-color: #ff3366 #222;
-    }
-
+    /* Contenedor de la galería en grid de 3 columnas */
     .gallery {
-      display: inline-flex;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+      gap: 30px 20px; /* espacio entre filas y columnas */
+      max-width: 1100px;
+      margin: 30px auto;
       padding: 0 10px;
     }
 
     .gallery-item {
       position: relative;
-      display: inline-block;
       cursor: pointer;
+      width: 100%;
+      text-align: center;
+      max-width: 320px;
+      margin: 0 auto;
     }
 
     .gallery img {
-      width: 300px;
-      height: 169px;
+      width: 100%;
+      height: 180px; /* un poco más alto para mejor proporción */
       object-fit: cover;
-      border-radius: 12px;
+      border-radius: 12px 12px 0 0;
       box-shadow: 0 8px 16px rgba(0,0,0,0.7);
       transition: all 0.35s ease;
       border: 3px solid #222;
+      border-bottom: none;
+      display: block;
     }
 
     .gallery img:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
       box-shadow: 0 15px 30px rgba(255, 51, 102, 0.5);
       border-color: #ff3366;
     }
 
-    /* Tooltip con progreso al pasar el cursor */
+    /* Barra de progreso */
+    .progress-container {
+      width: 100%;
+      background: #222;
+      border-radius: 0 0 12px 12px;
+      border: 3px solid #222;
+      border-top: none;
+      overflow: hidden;
+      margin-top: -3px;
+    }
+
+    .progress-bar {
+      height: 38px;
+      background: linear-gradient(90deg, #ff3366, #ff6699);
+      width: 0%;
+      transition: width 1s ease;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.1em;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    }
+
+    .progress-text {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      font-size: 0.95em;
+      color: white;
+      font-weight: bold;
+      pointer-events: none;
+    }
+
+    /* Tooltip (opcional) */
     .tooltip {
       visibility: hidden;
       width: 260px;
@@ -69,7 +105,7 @@
       color: white;
       text-align: center;
       border-radius: 10px;
-      padding: 14px 16px;
+      padding: 12px 16px;
       position: absolute;
       z-index: 15;
       bottom: 115%;
@@ -77,10 +113,8 @@
       transform: translateX(-50%);
       opacity: 0;
       transition: opacity 0.3s ease;
-      font-size: 16px;
-      font-weight: bold;
+      font-size: 15px;
       border: 2px solid #ff3366;
-      pointer-events: none;
     }
 
     .gallery-item:hover .tooltip {
@@ -89,100 +123,160 @@
     }
 
     .info {
-      margin: 40px 0;
+      margin: 50px 0;
       font-size: 1.1em;
     }
 
     .info strong {
       color: #ff6699;
     }
+
+    /* Responsive: en pantallas medianas y pequeñas */
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+      }
+      .gallery-item {
+        max-width: 340px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <h1>¡Desbloquea esta película porno!</h1>
-  <p class="subtitle">Donación mínima: $1 USD — Meta: $30 USD</p>
+  <p class="subtitle">Donación mínima: $1 USD — Meta: $30 USD por película</p>
 
-  <!-- GALERÍA DE MINIATURAS -->
-  <div class="gallery-container">
-    <div class="gallery">
+  <!-- GALERÍA DE MINIATURAS EN GRID -->
+  <div class="gallery">
 
-      <!-- Película 1 -->
-      <div class="gallery-item" onclick="abrirDonacion('donar1.html')">
-        <img src="https://i.postimg.cc/fRZX7hC2/vlcsnap_2026_01_12_10h27m17s374.png" alt="captura 1">
-        <div class="tooltip">Película 1: 24 / 30 USD (80% recaudado)</div>
+    <!-- Película 1 -->
+    <div class="gallery-item" onclick="abrirDonacion('donar1.html')">
+      <img src="https://i.postimg.cc/fRZX7hC2/vlcsnap_2026_01_12_10h27m17s374.png" alt="captura 1">
+      <div class="progress-container">
+        <div class="progress-bar" style="width: 80%;">
+          <span class="progress-text">24 / 30 USD - 80%</span>
+        </div>
       </div>
-
-      <!-- Película 2 -->
-      <div class="gallery-item" onclick="abrirDonacion('donar2.html')">
-        <img src="https://i.postimg.cc/cH251Ccp/vlcsnap_2026_01_13_11h31m44s209.png" alt="Captura 2">
-        <div class="tooltip">Película 2: 7 / 30 USD (23% recaudado)</div>
-      </div>
-
-      <!-- Película 3 -->
-      <div class="gallery-item" onclick="abrirDonacion('donar3.html')">
-        <img src="https://i.postimg.cc/K8Ls1DsV/vlcsnap_2026_01_15_11h43m06s175.png" alt="Captura 3">
-        <div class="tooltip">Película 3: 26 / 30 USD (87% recaudado)</div>
-      </div>
-
-      <!-- Película 4 -->
-      <div class="gallery-item" onclick="abrirDonacion('donar4.html')">
-        <img src="https://i.postimg.cc/ZqSspv11/vlcsnap_2026_01_15_11h44m33s502.png" alt="captura 4">
-        <div class="tooltip">Película 4: 18 / 30 USD (60% recaudado)</div>
-      </div>
-
-      <!-- Película 5 -->
-      <div class="gallery-item" onclick="abrirDonacion('donar5.html')">
-        <img src="https://i.postimg.cc/htx3X13k/vlcsnap_2026_01_15_11h44m58s213.png" alt="captura 5">
-        <div class="tooltip">Película 5: 12 / 30 USD (40% recaudado)</div>
-      </div>
-
-      <!-- Película 6 -->
-      <div class="gallery-item" onclick="abrirDonacion('donar6.html')">
-        <img src="https://i.postimg.cc/YCgyvzs7/vlcsnap_2026_01_15_11h45m44s464.png" alt="captura 6">
-        <div class="tooltip">Película 6: 29 / 30 USD (97% recaudado) ¡Casi lista!</div>
-      </div>
-
-      <!-- Película 7 -->
-      <div class="gallery-item" onclick="abrirDonacion('donar7.html')">
-        <img src="https://i.postimg.cc/QM3Y1K2B/vlcsnap_2026_01_15_11h46m10s266.png" alt="captura 7">
-        <div class="tooltip">Película 7: 15 / 30 USD (50% recaudado)</div>
-      </div>
-
-      <!-- Película 8 -->
-      <div class="gallery-item" onclick="abrirDonacion('donar8.html')">
-        <img src="https://i.postimg.cc/Gpx7QhR3/vlcsnap_2026_01_15_11h46m48s275.png" alt="captura 8">
-        <div class="tooltip">Película 8: 22 / 30 USD (73% recaudado)</div>
-      </div>
-
-      <!-- Película 9 -->
-      <div class="gallery-item" onclick="abrirDonacion('donar9.html')">
-        <img src="https://i.postimg.cc/GpCgGTWs/vlcsnap_2026_01_15_11h47m14s774.png" alt="captura 9">
-        <div class="tooltip">Película 9: 8 / 30 USD (27% recaudado)</div>
-      </div>
-
-      <!-- Película 10 -->
-      <div class="gallery-item" onclick="abrirDonacion('donar10.html')">
-        <img src="https://i.postimg.cc/HxD2mRgD/vlcsnap_2026_01_16_11h28m37s673.png" alt="captura 10">
-        <div class="tooltip">Película 10: 19 / 30 USD (63% recaudado)</div>
-      </div>
-
+      <div class="tooltip">Película 1: 24 / 30 USD (80% recaudado)</div>
     </div>
+
+    <!-- Película 2 -->
+    <div class="gallery-item" onclick="abrirDonacion('donar2.html')">
+      <img src="https://i.postimg.cc/cH251Ccp/vlcsnap_2026_01_13_11h31m44s209.png" alt="Captura 2">
+      <div class="progress-container">
+        <div class="progress-bar" style="width: 23%;">
+          <span class="progress-text">7 / 30 USD - 23%</span>
+        </div>
+      </div>
+      <div class="tooltip">Película 2: 7 / 30 USD (23% recaudado)</div>
+    </div>
+
+    <!-- Película 3 -->
+    <div class="gallery-item" onclick="abrirDonacion('donar3.html')">
+      <img src="https://i.postimg.cc/K8Ls1DsV/vlcsnap_2026_01_15_11h43m06s175.png" alt="Captura 3">
+      <div class="progress-container">
+        <div class="progress-bar" style="width: 87%;">
+          <span class="progress-text">26 / 30 USD - 87%</span>
+        </div>
+      </div>
+      <div class="tooltip">Película 3: 26 / 30 USD (87% recaudado)</div>
+    </div>
+
+    <!-- Película 4 -->
+    <div class="gallery-item" onclick="abrirDonacion('donar4.html')">
+      <img src="https://i.postimg.cc/ZqSspv11/vlcsnap_2026_01_15_11h44m33s502.png" alt="captura 4">
+      <div class="progress-container">
+        <div class="progress-bar" style="width: 60%;">
+          <span class="progress-text">18 / 30 USD - 60%</span>
+        </div>
+      </div>
+      <div class="tooltip">Película 4: 18 / 30 USD (60% recaudado)</div>
+    </div>
+
+    <!-- Película 5 -->
+    <div class="gallery-item" onclick="abrirDonacion('donar5.html')">
+      <img src="https://i.postimg.cc/htx3X13k/vlcsnap_2026_01_15_11h44m58s213.png" alt="captura 5">
+      <div class="progress-container">
+        <div class="progress-bar" style="width: 40%;">
+          <span class="progress-text">12 / 30 USD - 40%</span>
+        </div>
+      </div>
+      <div class="tooltip">Película 5: 12 / 30 USD (40% recaudado)</div>
+    </div>
+
+    <!-- Película 6 -->
+    <div class="gallery-item" onclick="abrirDonacion('donar6.html')">
+      <img src="https://i.postimg.cc/YCgyvzs7/vlcsnap_2026_01_15_11h45m44s464.png" alt="captura 6">
+      <div class="progress-container">
+        <div class="progress-bar" style="width: 97%;">
+          <span class="progress-text">29 / 30 USD - 97%</span>
+        </div>
+      </div>
+      <div class="tooltip">Película 6: 29 / 30 USD (97% recaudado) ¡Casi lista!</div>
+    </div>
+
+    <!-- Película 7 -->
+    <div class="gallery-item" onclick="abrirDonacion('donar7.html')">
+      <img src="https://i.postimg.cc/QM3Y1K2B/vlcsnap_2026_01_15_11h46m10s266.png" alt="captura 7">
+      <div class="progress-container">
+        <div class="progress-bar" style="width: 50%;">
+          <span class="progress-text">15 / 30 USD - 50%</span>
+        </div>
+      </div>
+      <div class="tooltip">Película 7: 15 / 30 USD (50% recaudado)</div>
+    </div>
+
+    <!-- Película 8 -->
+    <div class="gallery-item" onclick="abrirDonacion('donar8.html')">
+      <img src="https://i.postimg.cc/Gpx7QhR3/vlcsnap_2026_01_15_11h46m48s275.png" alt="captura 8">
+      <div class="progress-container">
+        <div class="progress-bar" style="width: 73%;">
+          <span class="progress-text">22 / 30 USD - 73%</span>
+        </div>
+      </div>
+      <div class="tooltip">Película 8: 22 / 30 USD (73% recaudado)</div>
+    </div>
+
+    <!-- Película 9 -->
+    <div class="gallery-item" onclick="abrirDonacion('donar9.html')">
+      <img src="https://i.postimg.cc/GpCgGTWs/vlcsnap_2026_01_15_11h47m14s774.png" alt="captura 9">
+      <div class="progress-container">
+        <div class="progress-bar" style="width: 27%;">
+          <span class="progress-text">8 / 30 USD - 27%</span>
+        </div>
+      </div>
+      <div class="tooltip">Película 9: 8 / 30 USD (27% recaudado)</div>
+    </div>
+
+    <!-- Película 10 -->
+    <div class="gallery-item" onclick="abrirDonacion('donar10.html')">
+      <img src="https://i.postimg.cc/HxD2mRgD/vlcsnap_2026_01_16_11h28m37s673.png" alt="captura 10">
+      <div class="progress-container">
+        <div class="progress-bar" style="width: 63%;">
+          <span class="progress-text">19 / 30 USD - 63%</span>
+        </div>
+      </div>
+      <div class="tooltip">Película 10: 19 / 30 USD (63% recaudado)</div>
+    </div>
+
   </div>
 
   <div class="info">
-    <p>¡Pasa el cursor sobre cada miniatura para ver cuánto falta!</p>
-    <p>¡Haz clic en la que esté más cerca de desbloquearse!</p>
+    <p>¡Mira qué tan cerca está cada película de desbloquearse!</p>
+    <p>¡Haz clic en la que más te guste o en la que esté más cerca de la meta!</p>
     <p><strong>Tarjeta débito/crédito • PayPal • Cripto • Cash App • Dollar App</strong></p>
   </div>
 
   <script>
     function abrirDonacion(pagina) {
-      // Abre en nueva pestaña para no perder la galería
       window.open(pagina, '_blank');
-      
-      // Si prefieres que abra en la misma pestaña:
-      // window.location.href = pagina;
     }
   </script>
 
