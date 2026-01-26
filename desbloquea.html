@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -24,11 +25,10 @@
       margin-bottom: 30px;
     }
 
-    /* Contenedor de la galería en grid de 3 columnas */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
-      gap: 30px 20px; /* espacio entre filas y columnas */
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px 20px;
       max-width: 1100px;
       margin: 30px auto;
       padding: 0 10px;
@@ -45,7 +45,7 @@
 
     .gallery img {
       width: 100%;
-      height: 180px; /* un poco más alto para mejor proporción */
+      height: 180px;
       object-fit: cover;
       border-radius: 12px 12px 0 0;
       box-shadow: 0 8px 16px rgba(0,0,0,0.7);
@@ -74,9 +74,8 @@
 
     .progress-bar {
       height: 38px;
-      background: linear-gradient(90deg, #ff3366, #ff6699);
       width: 0%;
-      transition: width 1s ease;
+      transition: width 1s ease, background 0.8s ease;
       position: relative;
       display: flex;
       align-items: center;
@@ -86,6 +85,12 @@
       color: white;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
     }
+
+    /* Colores según porcentaje */
+    .progress-bar.low    { background: linear-gradient(90deg, #ff4d4d, #ff8080); } /* 0-30%   Rojo */
+    .progress-bar.medium { background: linear-gradient(90deg, #ffa500, #ffcc66); } /* 31-60%  Naranja */
+    .progress-bar.high   { background: linear-gradient(90deg, #66cc66, #99ff99); } /* 61-90%  Verde claro */
+    .progress-bar.almost { background: linear-gradient(90deg, #00cc00, #66ff66); } /* 91-100% Verde brillante */
 
     .progress-text {
       position: absolute;
@@ -97,7 +102,6 @@
       pointer-events: none;
     }
 
-    /* Tooltip (opcional) */
     .tooltip {
       visibility: hidden;
       width: 260px;
@@ -131,20 +135,13 @@
       color: #ff6699;
     }
 
-    /* Responsive: en pantallas medianas y pequeñas */
     @media (max-width: 900px) {
-      .gallery {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
-      }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 600px) {
-      .gallery {
-        grid-template-columns: 1fr; /* 1 columna en móviles */
-      }
-      .gallery-item {
-        max-width: 340px;
-      }
+      .gallery { grid-template-columns: 1fr; }
+      .gallery-item { max-width: 340px; }
     }
   </style>
 </head>
@@ -153,14 +150,13 @@
   <h1>¡Desbloquea esta película porno!</h1>
   <p class="subtitle">Donación mínima: $1 USD — Meta: $30 USD por película</p>
 
-  <!-- GALERÍA DE MINIATURAS EN GRID -->
   <div class="gallery">
 
     <!-- Película 1 -->
     <div class="gallery-item" onclick="abrirDonacion('donar1.html')">
       <img src="https://i.postimg.cc/fRZX7hC2/vlcsnap_2026_01_12_10h27m17s374.png" alt="captura 1">
       <div class="progress-container">
-        <div class="progress-bar" style="width: 80%;">
+        <div class="progress-bar low" style="width: 0%;">
           <span class="progress-text">0 / 30 USD - 0%</span>
         </div>
       </div>
@@ -171,7 +167,7 @@
     <div class="gallery-item" onclick="abrirDonacion('donar2.html')">
       <img src="https://i.postimg.cc/cH251Ccp/vlcsnap_2026_01_13_11h31m44s209.png" alt="Captura 2">
       <div class="progress-container">
-        <div class="progress-bar" style="width: 23%;">
+        <div class="progress-bar low" style="width: 0%;">
           <span class="progress-text">0 / 30 USD - 0%</span>
         </div>
       </div>
@@ -182,7 +178,7 @@
     <div class="gallery-item" onclick="abrirDonacion('donar3.html')">
       <img src="https://i.postimg.cc/K8Ls1DsV/vlcsnap_2026_01_15_11h43m06s175.png" alt="Captura 3">
       <div class="progress-container">
-        <div class="progress-bar" style="width: 87%;">
+        <div class="progress-bar low" style="width: 0%;">
           <span class="progress-text">0 / 30 USD - 0%</span>
         </div>
       </div>
@@ -193,8 +189,8 @@
     <div class="gallery-item" onclick="abrirDonacion('donar4.html')">
       <img src="https://i.postimg.cc/ZqSspv11/vlcsnap_2026_01_15_11h44m33s502.png" alt="captura 4">
       <div class="progress-container">
-        <div class="progress-bar" style="width: 60%;">
-          <span class="progress-text"> 0/ 30 USD - 0%</span>
+        <div class="progress-bar low" style="width: 0%;">
+          <span class="progress-text">0 / 30 USD - 0%</span>
         </div>
       </div>
       <div class="tooltip">Película 4: 0 / 30 USD (0% recaudado)</div>
@@ -204,7 +200,7 @@
     <div class="gallery-item" onclick="abrirDonacion('donar5.html')">
       <img src="https://i.postimg.cc/htx3X13k/vlcsnap_2026_01_15_11h44m58s213.png" alt="captura 5">
       <div class="progress-container">
-        <div class="progress-bar" style="width: 40%;">
+        <div class="progress-bar low" style="width: 0%;">
           <span class="progress-text">0 / 30 USD - 0%</span>
         </div>
       </div>
@@ -215,19 +211,19 @@
     <div class="gallery-item" onclick="abrirDonacion('donar6.html')">
       <img src="https://i.postimg.cc/YCgyvzs7/vlcsnap_2026_01_15_11h45m44s464.png" alt="captura 6">
       <div class="progress-container">
-        <div class="progress-bar" style="width: 97%;">
+        <div class="progress-bar low" style="width: 0%;">
           <span class="progress-text">0 / 30 USD - 0%</span>
         </div>
       </div>
-      <div class="tooltip">Película 6: 0 / 30 USD (0% recaudado) ¡Casi lista!</div>
+      <div class="tooltip">Película 6: 0 / 30 USD (0% recaudado)</div>
     </div>
 
     <!-- Película 7 -->
     <div class="gallery-item" onclick="abrirDonacion('donar7.html')">
       <img src="https://i.postimg.cc/QM3Y1K2B/vlcsnap_2026_01_15_11h46m10s266.png" alt="captura 7">
       <div class="progress-container">
-        <div class="progress-bar" style="width: 50%;">
-          <span class="progress-text"> 0/ 30 USD - 0%</span>
+        <div class="progress-bar low" style="width: 0%;">
+          <span class="progress-text">0 / 30 USD - 0%</span>
         </div>
       </div>
       <div class="tooltip">Película 7: 0 / 30 USD (0% recaudado)</div>
@@ -237,7 +233,7 @@
     <div class="gallery-item" onclick="abrirDonacion('donar8.html')">
       <img src="https://i.postimg.cc/Gpx7QhR3/vlcsnap_2026_01_15_11h46m48s275.png" alt="captura 8">
       <div class="progress-container">
-        <div class="progress-bar" style="width: 73%;">
+        <div class="progress-bar low" style="width: 0%;">
           <span class="progress-text">0 / 30 USD - 0%</span>
         </div>
       </div>
@@ -248,7 +244,7 @@
     <div class="gallery-item" onclick="abrirDonacion('donar9.html')">
       <img src="https://i.postimg.cc/GpCgGTWs/vlcsnap_2026_01_15_11h47m14s774.png" alt="captura 9">
       <div class="progress-container">
-        <div class="progress-bar" style="width: 27%;">
+        <div class="progress-bar low" style="width: 0%;">
           <span class="progress-text">0 / 30 USD - 0%</span>
         </div>
       </div>
@@ -259,7 +255,7 @@
     <div class="gallery-item" onclick="abrirDonacion('donar10.html')">
       <img src="https://i.postimg.cc/HxD2mRgD/vlcsnap_2026_01_16_11h28m37s673.png" alt="captura 10">
       <div class="progress-container">
-        <div class="progress-bar" style="width: 63%;">
+        <div class="progress-bar low" style="width: 0%;">
           <span class="progress-text">0 / 30 USD - 0%</span>
         </div>
       </div>
